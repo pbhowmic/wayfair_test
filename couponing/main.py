@@ -62,4 +62,4 @@ if __name__ == "__main__":
     search_categories = ["Bed & Bath", "Bedding", "Bathroom Accessories", "Comforter Sets", "Toy Organizers"]
     categories_child_parent = {x['Category Name']: x['Category Parent Name'] for x in categories}
     for category in search_categories:
-        print(category, "=>", find_coupon(category, coupons=coupons, categories=categories_child_parent))
+        print(f'"{category}"', "=>", find_coupon(category, coupons=coupons, categories=categories_child_parent))
