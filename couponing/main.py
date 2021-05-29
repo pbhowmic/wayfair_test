@@ -1,31 +1,33 @@
 from typing import List, Dict, Optional, Union
 
 
-def parent_category(child: str, categories: Dict[str, Optional[str]]) -> Optional[str]:
+def parent_category(child: Optional[str], categories: Dict[str, Optional[str]]) -> Optional[str]:
     """
-
+    Returns the parent coupon category for a given category. if `child` is
+    None or the parent name cannot be found, then None is returned.
     Args:
-        child:
-        categories:
+        child: The category name whose parent needs to be found.
+        categories: A dictionary of `{child}:{parent}` representing the parent-child category relationship
 
     Returns:
-
+        The parent category name of `None` if `child` is `None` or is not in the keys of `categories`
     """
-    return categories.get(child, None)
+    return categories.get(child, None) if child else None
 
 
 def find_coupon(category_name: Optional[str], coupons: List[Dict[str, str]],
                 categories: Dict[str, Optional[str]], reverse=False) -> List[str]:
     """
+    Given a category name, returns a list of the most recent coupons it can find
 
     Args:
-        category_name:
-        coupons:
-        categories:
-        reverse:
+        category_name: The category name
+        coupons: A list of available coupons.
+        categories: A dictionary of `{child}:{parent}` representing the parent-child category relationship
+        reverse: Returns the list of coupons in reverse-lexical order if `True`
 
     Returns:
-
+        The list of the most recent coupons it can find or an empty list if no list was found
     """
     if category_name is None:
         return []
