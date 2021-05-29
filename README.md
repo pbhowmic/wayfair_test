@@ -8,5 +8,5 @@
 `python3 main.py`
 
 The function that does the actual work is `find_coupon()`. 
-See source code in `main.py` for the spec on the arguments 
+See source code in `couponing/main.py` for the spec on the arguments 
 it takes.
