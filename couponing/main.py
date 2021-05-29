@@ -5,6 +5,7 @@ def parent_category(child: Optional[str], categories: Dict[str, Optional[str]]) 
     """
     Returns the parent coupon category for a given category. if `child` is
     None or the parent name cannot be found, then None is returned.
+
     Args:
         child: The category name whose parent needs to be found.
         categories: A dictionary of `{child}:{parent}` representing the parent-child category relationship
